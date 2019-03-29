@@ -10,7 +10,8 @@ class Carre:public Figure
 	Carre();
 	Carre(int x, int y, int cote);
 	Carre(const Carre&);
-    void setCote(int);
-	int getCote() const;
+    virtual void setCote(int);
+	virtual int getCote() const;
+	virtual float getPerimetre() const;
 };
 #endif

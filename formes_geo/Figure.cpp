@@ -57,3 +57,27 @@ void Figure::Deselectionner()
 	estSelectionne = false;
 }
 
+void Figure::setCote(int inCote)
+{
+	//fait rien cest un set
+}
+
+int Figure::getCote() const
+{
+	return 0;
+}
+
+void Figure::setRayon(int inRayon)
+{
+	//Fait rien, cest un set
+}
+
+int Figure::getRayon() const
+{
+	return 0;
+}
+
+float Figure::getPerimetre() const
+{
+	return 0;
+}

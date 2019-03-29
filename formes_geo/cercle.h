@@ -10,7 +10,8 @@ class Cercle:public Figure
 	Cercle();
 	Cercle(int x, int y, int rayon);
 	Cercle(const Cercle&);
-    void setRayon(int);
-	int getRayon() const;
+    virtual void setRayon(int);
+	virtual int getRayon() const;
+	virtual float getPerimetre() const;
 };
 #endif
