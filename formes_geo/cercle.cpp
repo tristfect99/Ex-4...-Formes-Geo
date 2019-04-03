@@ -1,5 +1,10 @@
 #include "cercle.h"
 
+Cercle::~Cercle()
+{
+
+}
+
 Cercle::Cercle():Figure()
 {
 	rayon = 0;
@@ -28,4 +33,17 @@ int Cercle::getRayon() const
 float Cercle::getPerimetre() const
 {
 	return (2 * Pi*rayon);
+}
+
+bool Cercle::selectionner(int inX, int inY) 
+{
+	estSelectionne = false;
+	float a = x + (float)rayon;
+	float b = y + (float)rayon;
+
+	if ((((inX-a)*(inX - a) + (inY-b)*(inY - b)) / ((float)rayon*(float)rayon)) <= 1)
+	{
+		estSelectionne = true;
+	}
+	return estSelectionne;
 }

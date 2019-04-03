@@ -1,5 +1,10 @@
 #include "Figure.h"
 
+Figure::~Figure()
+{
+
+}
+
 Figure::Figure()
 {
 	x = 0;
@@ -73,11 +78,6 @@ void Figure::setRayon(int inRayon)
 }
 
 int Figure::getRayon() const
-{
-	return 0;
-}
-
-float Figure::getPerimetre() const
 {
 	return 0;
 }

@@ -1,5 +1,10 @@
 #include "carre.h"
 
+Carre::~Carre()
+{
+
+}
+
 Carre::Carre():Figure()
 {
 	cote=0;
@@ -28,4 +33,18 @@ int Carre::getCote() const
 float Carre::getPerimetre() const
 {
 	return  cote * 4;
+}
+
+bool Carre::selectionner(int inX, int inY) 
+{
+	estSelectionne = false;
+
+	if (inX>x & inX< x+cote)
+	{
+		if (inY > y & inY < y + cote)
+		{
+			estSelectionne = true;
+		}
+	}
+	return estSelectionne;
 }
