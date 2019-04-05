@@ -35,7 +35,21 @@ int Figure::getY() const
 {
 	return y;
 }
+void Figure::setLargeur(int inLargeur)
+{
+}
+void Figure::setHauteur(int inHauteur)
+{
+}
 
+int Figure::getLargeur() const
+{
+	return 0;
+}
+int Figure::getHauteur() const
+{
+	return 0;
+}
 bool Figure::EstSelectionne()
 {
 	return estSelectionne;

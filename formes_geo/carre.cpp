@@ -48,7 +48,10 @@ bool Carre::selectionner(int inX, int inY)
 	}
 	return estSelectionne;
 }
-
+float Carre::calculerAire()
+{
+	return (float)(cote*cote);
+}
 string Carre::getType()
 {
 	return "Carre"

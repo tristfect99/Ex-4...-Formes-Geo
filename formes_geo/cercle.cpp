@@ -34,7 +34,10 @@ float Cercle::getPerimetre() const
 {
 	return (2 * Pi*rayon);
 }
-
+float Cercle::calculerAire()
+{
+	return (float)(Pi * rayon * rayon);
+}
 bool Cercle::selectionner(int inX, int inY) 
 {
 	estSelectionne = false;

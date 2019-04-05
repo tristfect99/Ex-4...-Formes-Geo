@@ -14,6 +14,7 @@ class Cercle:public Figure
     virtual void setRayon(int);
 	virtual int getRayon() const;
 	virtual float getPerimetre() const;
+	virtual float calculerAire();
 	virtual bool selectionner(int, int);
 };
 #endif
