@@ -95,3 +95,7 @@ int Figure::getRayon() const
 {
 	return 0;
 }
+
+string Figure::getType() {
+	return "";
+}

@@ -16,5 +16,6 @@ class Cercle:public Figure
 	virtual float getPerimetre() const;
 	virtual float calculerAire();
 	virtual bool selectionner(int, int);
+	string getType();
 };
 #endif
