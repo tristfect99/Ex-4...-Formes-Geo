@@ -480,6 +480,8 @@ namespace formes_geo {
 				figureCourante->setY(Convert::ToInt32(textY->Text));
 				figureCourante->setCote(Convert::ToInt32(textCote->Text));
 				figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+				figureCourante->setHauteur(Convert::ToInt32(txt_hauteur->Text));
+				figureCourante->setLargeur(Convert::ToInt32(txt_largeur->Text));
 			}
 			cptFigure++;
 			figureCourante = lesFigures.ObtenirFigure(cptFigure);
