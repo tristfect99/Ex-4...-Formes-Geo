@@ -68,10 +68,17 @@ namespace formes_geo {
 	private: System::Windows::Forms::Label^  lbl_rectangle;
 	private: System::Windows::Forms::Label^  lbl_hauteur;
 	private: System::Windows::Forms::Label^  lbl_largeur;
+<<<<<<< HEAD
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::ListBox^  listBoxAires;
+=======
+	private: System::Windows::Forms::TextBox^  txt_hauteur;
+	private: System::Windows::Forms::TextBox^  txt_largeur;
+
+
+>>>>>>> 09f44bdb4795ca9c17da12f1e6dc5e9954dc07fe
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -98,10 +105,15 @@ namespace formes_geo {
 				 this->lbl_rectangle = (gcnew System::Windows::Forms::Label());
 				 this->lbl_hauteur = (gcnew System::Windows::Forms::Label());
 				 this->lbl_largeur = (gcnew System::Windows::Forms::Label());
+<<<<<<< HEAD
 				 this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 				 this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 				 this->button1 = (gcnew System::Windows::Forms::Button());
 				 this->listBoxAires = (gcnew System::Windows::Forms::ListBox());
+=======
+				 this->txt_hauteur = (gcnew System::Windows::Forms::TextBox());
+				 this->txt_largeur = (gcnew System::Windows::Forms::TextBox());
+>>>>>>> 09f44bdb4795ca9c17da12f1e6dc5e9954dc07fe
 				 this->SuspendLayout();
 				 // 
 				 // label3
@@ -239,19 +251,19 @@ namespace formes_geo {
 				 this->lbl_largeur->TabIndex = 31;
 				 this->lbl_largeur->Text = L"Largeur:";
 				 // 
-				 // textBox1
+				 // txt_hauteur
 				 // 
-				 this->textBox1->Location = System::Drawing::Point(783, 25);
-				 this->textBox1->Name = L"textBox1";
-				 this->textBox1->Size = System::Drawing::Size(37, 20);
-				 this->textBox1->TabIndex = 32;
+				 this->txt_hauteur->Location = System::Drawing::Point(783, 25);
+				 this->txt_hauteur->Name = L"txt_hauteur";
+				 this->txt_hauteur->Size = System::Drawing::Size(37, 20);
+				 this->txt_hauteur->TabIndex = 32;
 				 // 
-				 // textBox2
+				 // txt_largeur
 				 // 
-				 this->textBox2->Location = System::Drawing::Point(783, 59);
-				 this->textBox2->Name = L"textBox2";
-				 this->textBox2->Size = System::Drawing::Size(37, 20);
-				 this->textBox2->TabIndex = 33;
+				 this->txt_largeur->Location = System::Drawing::Point(783, 59);
+				 this->txt_largeur->Name = L"txt_largeur";
+				 this->txt_largeur->Size = System::Drawing::Size(37, 20);
+				 this->txt_largeur->TabIndex = 33;
 				 // 
 				 // button1
 				 // 
@@ -276,10 +288,15 @@ namespace formes_geo {
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->ClientSize = System::Drawing::Size(892, 490);
+<<<<<<< HEAD
 				 this->Controls->Add(this->listBoxAires);
 				 this->Controls->Add(this->button1);
 				 this->Controls->Add(this->textBox2);
 				 this->Controls->Add(this->textBox1);
+=======
+				 this->Controls->Add(this->txt_largeur);
+				 this->Controls->Add(this->txt_hauteur);
+>>>>>>> 09f44bdb4795ca9c17da12f1e6dc5e9954dc07fe
 				 this->Controls->Add(this->lbl_largeur);
 				 this->Controls->Add(this->lbl_hauteur);
 				 this->Controls->Add(this->lbl_rectangle);
@@ -432,6 +449,8 @@ namespace formes_geo {
 				textY->Text = figureCourante->getY().ToString();
 				textCote->Text = figureCourante->getCote().ToString();
 				textRayon->Text = figureCourante->getRayon().ToString();
+				txt_hauteur->Text = figureCourante->getHauteur().ToString();
+				txt_largeur->Text = figureCourante->getLargeur().ToString();
 
 			}
 			else
