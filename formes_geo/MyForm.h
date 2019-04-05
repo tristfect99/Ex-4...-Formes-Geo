@@ -2,6 +2,7 @@
 #include "cercle.h"
 #include "carre.h"
 #include "donnees.h"
+#include "rectangle.h"
 #include <msclr\marshal_cppstd.h>
 
 namespace formes_geo {
@@ -325,6 +326,7 @@ namespace formes_geo {
 		comboFigure->Items->Add("");
 		comboFigure->Items->Add("Carre");
 		comboFigure->Items->Add("Cercle");
+		comboFigure->Items->Add("Rectangle");
 		figureCourante = NULL;
 		InitialiserTextBox();
 	}
@@ -335,6 +337,8 @@ namespace formes_geo {
 				 textY->Text = "0";
 				 textCote->Text = "0";
 				 textRayon->Text = "0";
+				 txt_hauteur->Text = "0";
+				 txt_largeur->Text = "0";
 			 }
 
 	private: System::Void btn_CreerFigure(System::Object^  sender, System::EventArgs^  e) {
@@ -349,10 +353,16 @@ namespace formes_geo {
 			{
 				figureCourante = new Cercle;
 			}
+			else if (comboFigure->Text == "Rectangle")
+			{
+				figureCourante = new FormeRectangle;
+			}
 			figureCourante->setX(Convert::ToInt32(textX->Text));
 			figureCourante->setY(Convert::ToInt32(textY->Text));
 			figureCourante->setCote(Convert::ToInt32(textCote->Text));
 			figureCourante->setRayon(Convert::ToInt32(textRayon->Text));
+			figureCourante->setHauteur(Convert::ToInt32(txt_hauteur->Text));
+			figureCourante->setLargeur(Convert::ToInt32(txt_largeur->Text));
 			lesFigures.AjouterFigure(figureCourante);
 			DessinerFigure();
 			comboFigure->SelectedIndex = 0;

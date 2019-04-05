@@ -17,7 +17,7 @@ class FormeRectangle:public Figure
 	int getLargeur() const;
 	int getHauteur() const;
 	float calculerAire();
-	float getPerimetre();
+	float getPerimetre() const;
 	bool selectionner(int,int);
 	string getType();
 };
