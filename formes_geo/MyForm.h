@@ -70,6 +70,8 @@ namespace formes_geo {
 	private: System::Windows::Forms::Label^  lbl_largeur;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::ListBox^  listBoxAires;
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -98,6 +100,8 @@ namespace formes_geo {
 				 this->lbl_largeur = (gcnew System::Windows::Forms::Label());
 				 this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 				 this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+				 this->button1 = (gcnew System::Windows::Forms::Button());
+				 this->listBoxAires = (gcnew System::Windows::Forms::ListBox());
 				 this->SuspendLayout();
 				 // 
 				 // label3
@@ -249,11 +253,31 @@ namespace formes_geo {
 				 this->textBox2->Size = System::Drawing::Size(37, 20);
 				 this->textBox2->TabIndex = 33;
 				 // 
+				 // button1
+				 // 
+				 this->button1->Location = System::Drawing::Point(304, 68);
+				 this->button1->Name = L"button1";
+				 this->button1->Size = System::Drawing::Size(121, 24);
+				 this->button1->TabIndex = 34;
+				 this->button1->Text = L"Aires des figures";
+				 this->button1->UseVisualStyleBackColor = true;
+				 this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+				 // 
+				 // listBoxAires
+				 // 
+				 this->listBoxAires->FormattingEnabled = true;
+				 this->listBoxAires->Location = System::Drawing::Point(459, 99);
+				 this->listBoxAires->Name = L"listBoxAires";
+				 this->listBoxAires->Size = System::Drawing::Size(180, 82);
+				 this->listBoxAires->TabIndex = 35;
+				 // 
 				 // MyForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->ClientSize = System::Drawing::Size(892, 490);
+				 this->Controls->Add(this->listBoxAires);
+				 this->Controls->Add(this->button1);
 				 this->Controls->Add(this->textBox2);
 				 this->Controls->Add(this->textBox1);
 				 this->Controls->Add(this->lbl_largeur);
@@ -442,5 +466,17 @@ namespace formes_geo {
 		DessinerTout();
 	}
 
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		int cptFigure = 0;
+		listBoxAires->Items->Clear();
+		listBoxAires->Items->Add("Périmètre des figures:");
+		figureCourante = lesFigures.ObtenirFigure(cptFigure);
+		while (figureCourante != nullptr)
+		{
+			listBoxAires->Items->Add(figureCourante->calculerAire().ToString());
+			cptFigure++;
+			figureCourante = lesFigures.ObtenirFigure(cptFigure);
+		}
+	}
+};
 }
