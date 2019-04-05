@@ -51,5 +51,5 @@ bool Carre::selectionner(int inX, int inY)
 
 string Carre::getType()
 {
-	return "Carre"
+	return "Carre";
 }
