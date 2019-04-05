@@ -453,13 +453,14 @@ namespace formes_geo {
 			figureCourante->selectionner(e->X, e->Y);
 			if (figureCourante->EstSelectionne())
 			{
+
 				textX->Text = figureCourante->getX().ToString();
 				textY->Text = figureCourante->getY().ToString();
 				textCote->Text = figureCourante->getCote().ToString();
 				textRayon->Text = figureCourante->getRayon().ToString();
 				txt_hauteur->Text = figureCourante->getHauteur().ToString();
-				txt_largeur->Text = figureCourante->getLargeur().ToString();
-
+				txt_largeur->Text = figureCourante->getLargeur().ToString();				
+				MessageBox::Show(gcnew String (figureCourante->getType().c_str()));
 			}
 			else
 			{

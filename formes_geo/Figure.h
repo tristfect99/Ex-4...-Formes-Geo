@@ -36,7 +36,7 @@ public:
 	virtual float calculerAire() =0;
 	virtual float getPerimetre() const =0;
 	virtual bool selectionner(int, int) = 0;
-	string getType();
+	virtual string getType();
 };
 
 #endif
