@@ -275,7 +275,6 @@ namespace formes_geo {
 				 this->Controls->Add(this->textY);
 				 this->Controls->Add(this->textX);
 				 this->Name = L"MyForm";
-				 this->Text = L"MyForm";
 				 this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 				 this->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseClick);
 				 this->ResumeLayout(false);
