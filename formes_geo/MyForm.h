@@ -70,8 +70,8 @@ namespace formes_geo {
 	private: System::Windows::Forms::Label^  lbl_hauteur;
 	private: System::Windows::Forms::Label^  lbl_largeur;
 
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
+
+
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::ListBox^  listBoxAires;
 
@@ -105,15 +105,10 @@ namespace formes_geo {
 				 this->lbl_rectangle = (gcnew System::Windows::Forms::Label());
 				 this->lbl_hauteur = (gcnew System::Windows::Forms::Label());
 				 this->lbl_largeur = (gcnew System::Windows::Forms::Label());
-
-				 this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-				 this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 				 this->button1 = (gcnew System::Windows::Forms::Button());
 				 this->listBoxAires = (gcnew System::Windows::Forms::ListBox());
-
 				 this->txt_hauteur = (gcnew System::Windows::Forms::TextBox());
 				 this->txt_largeur = (gcnew System::Windows::Forms::TextBox());
-
 				 this->SuspendLayout();
 				 // 
 				 // label3
@@ -251,20 +246,6 @@ namespace formes_geo {
 				 this->lbl_largeur->TabIndex = 31;
 				 this->lbl_largeur->Text = L"Largeur:";
 				 // 
-				 // txt_hauteur
-				 // 
-				 this->txt_hauteur->Location = System::Drawing::Point(783, 25);
-				 this->txt_hauteur->Name = L"txt_hauteur";
-				 this->txt_hauteur->Size = System::Drawing::Size(37, 20);
-				 this->txt_hauteur->TabIndex = 32;
-				 // 
-				 // txt_largeur
-				 // 
-				 this->txt_largeur->Location = System::Drawing::Point(783, 59);
-				 this->txt_largeur->Name = L"txt_largeur";
-				 this->txt_largeur->Size = System::Drawing::Size(37, 20);
-				 this->txt_largeur->TabIndex = 33;
-				 // 
 				 // button1
 				 // 
 				 this->button1->Location = System::Drawing::Point(304, 68);
@@ -283,20 +264,29 @@ namespace formes_geo {
 				 this->listBoxAires->Size = System::Drawing::Size(180, 82);
 				 this->listBoxAires->TabIndex = 35;
 				 // 
+				 // txt_hauteur
+				 // 
+				 this->txt_hauteur->Location = System::Drawing::Point(783, 25);
+				 this->txt_hauteur->Name = L"txt_hauteur";
+				 this->txt_hauteur->Size = System::Drawing::Size(37, 20);
+				 this->txt_hauteur->TabIndex = 32;
+				 // 
+				 // txt_largeur
+				 // 
+				 this->txt_largeur->Location = System::Drawing::Point(783, 59);
+				 this->txt_largeur->Name = L"txt_largeur";
+				 this->txt_largeur->Size = System::Drawing::Size(37, 20);
+				 this->txt_largeur->TabIndex = 33;
+				 // 
 				 // MyForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->ClientSize = System::Drawing::Size(892, 490);
-
 				 this->Controls->Add(this->listBoxAires);
 				 this->Controls->Add(this->button1);
-				 this->Controls->Add(this->textBox2);
-				 this->Controls->Add(this->textBox1);
-
 				 this->Controls->Add(this->txt_largeur);
 				 this->Controls->Add(this->txt_hauteur);
-
 				 this->Controls->Add(this->lbl_largeur);
 				 this->Controls->Add(this->lbl_hauteur);
 				 this->Controls->Add(this->lbl_rectangle);
@@ -393,26 +383,32 @@ namespace formes_geo {
 				 int y = figureCourante->getY();
 				 int rayon = figureCourante->getRayon();
 				 int cote = figureCourante->getCote();
+				 int hauteur = figureCourante->getHauteur();
+				 int largeur = figureCourante->getLargeur();
 
-				 if  (rayon == 0 && cote !=0)
+				 if  (rayon == 0 && cote !=0 && hauteur == 0 && largeur == 0)
 				 {
 					 comboFigure->SelectedIndex = 1;
 				 }
-				 else if(cote == 0 && rayon !=0)
+				 else if(cote == 0 && rayon !=0 && hauteur == 0 && largeur == 0)
 				 {
 					 comboFigure->SelectedIndex = 2;
 				 }
-				 else
+				 else if (hauteur != 0 && largeur != 0)
 				 {
-					 comboFigure->SelectedIndex = 0;
+					 comboFigure->SelectedIndex = 3;
 				 }
 				 if (comboFigure->SelectedIndex == 1)
 				 {
 					 objetGraphique->DrawRectangle(crayon, x, y, cote, cote);
 				 }
-				 else
+				 else if(comboFigure->SelectedIndex == 2)
 				 {
 					 objetGraphique->DrawEllipse(crayon, x, y, rayon * 2, rayon * 2);
+				 }
+				 else if (comboFigure->SelectedIndex == 3)
+				 {
+					 objetGraphique->DrawRectangle(crayon, x, y, hauteur, largeur);
 				 }
 				 delete crayon;
 				 delete objetGraphique;
@@ -497,7 +493,7 @@ namespace formes_geo {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		int cptFigure = 0;
 		listBoxAires->Items->Clear();
-		listBoxAires->Items->Add("Périmètre des figures:");
+		listBoxAires->Items->Add("Aires des figures:");
 		figureCourante = lesFigures.ObtenirFigure(cptFigure);
 		while (figureCourante != nullptr)
 		{
