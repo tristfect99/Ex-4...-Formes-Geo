@@ -50,3 +50,7 @@ bool Cercle::selectionner(int inX, int inY)
 	}
 	return estSelectionne;
 }
+
+string Cercle::getType() {
+	return "Cercle";
+}
