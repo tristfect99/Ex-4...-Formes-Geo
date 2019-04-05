@@ -54,5 +54,5 @@ float Carre::calculerAire()
 }
 string Carre::getType()
 {
-	return "Carre"
+	return "Carre";
 }

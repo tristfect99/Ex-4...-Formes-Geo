@@ -65,6 +65,11 @@ namespace formes_geo {
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  textRayon;
+	private: System::Windows::Forms::Label^  lbl_rectangle;
+	private: System::Windows::Forms::Label^  lbl_hauteur;
+	private: System::Windows::Forms::Label^  lbl_largeur;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  textBox2;
 
 	private: System::Windows::Forms::Button^  btnModifie;
 
@@ -88,6 +93,11 @@ namespace formes_geo {
 				 this->btnModifie = (gcnew System::Windows::Forms::Button());
 				 this->label4 = (gcnew System::Windows::Forms::Label());
 				 this->textRayon = (gcnew System::Windows::Forms::TextBox());
+				 this->lbl_rectangle = (gcnew System::Windows::Forms::Label());
+				 this->lbl_hauteur = (gcnew System::Windows::Forms::Label());
+				 this->lbl_largeur = (gcnew System::Windows::Forms::Label());
+				 this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+				 this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 				 this->SuspendLayout();
 				 // 
 				 // label3
@@ -198,11 +208,57 @@ namespace formes_geo {
 				 this->textRayon->Size = System::Drawing::Size(37, 20);
 				 this->textRayon->TabIndex = 27;
 				 // 
+				 // lbl_rectangle
+				 // 
+				 this->lbl_rectangle->AutoSize = true;
+				 this->lbl_rectangle->Location = System::Drawing::Point(659, 40);
+				 this->lbl_rectangle->Name = L"lbl_rectangle";
+				 this->lbl_rectangle->Size = System::Drawing::Size(56, 13);
+				 this->lbl_rectangle->TabIndex = 29;
+				 this->lbl_rectangle->Text = L"Rectangle";
+				 // 
+				 // lbl_hauteur
+				 // 
+				 this->lbl_hauteur->AutoSize = true;
+				 this->lbl_hauteur->Location = System::Drawing::Point(721, 25);
+				 this->lbl_hauteur->Name = L"lbl_hauteur";
+				 this->lbl_hauteur->Size = System::Drawing::Size(48, 13);
+				 this->lbl_hauteur->TabIndex = 30;
+				 this->lbl_hauteur->Text = L"Hauteur:";
+				 // 
+				 // lbl_largeur
+				 // 
+				 this->lbl_largeur->AutoSize = true;
+				 this->lbl_largeur->Location = System::Drawing::Point(721, 63);
+				 this->lbl_largeur->Name = L"lbl_largeur";
+				 this->lbl_largeur->Size = System::Drawing::Size(46, 13);
+				 this->lbl_largeur->TabIndex = 31;
+				 this->lbl_largeur->Text = L"Largeur:";
+				 // 
+				 // textBox1
+				 // 
+				 this->textBox1->Location = System::Drawing::Point(783, 25);
+				 this->textBox1->Name = L"textBox1";
+				 this->textBox1->Size = System::Drawing::Size(37, 20);
+				 this->textBox1->TabIndex = 32;
+				 // 
+				 // textBox2
+				 // 
+				 this->textBox2->Location = System::Drawing::Point(783, 59);
+				 this->textBox2->Name = L"textBox2";
+				 this->textBox2->Size = System::Drawing::Size(37, 20);
+				 this->textBox2->TabIndex = 33;
+				 // 
 				 // MyForm
 				 // 
 				 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				 this->ClientSize = System::Drawing::Size(892, 490);
+				 this->Controls->Add(this->textBox2);
+				 this->Controls->Add(this->textBox1);
+				 this->Controls->Add(this->lbl_largeur);
+				 this->Controls->Add(this->lbl_hauteur);
+				 this->Controls->Add(this->lbl_rectangle);
 				 this->Controls->Add(this->label4);
 				 this->Controls->Add(this->textRayon);
 				 this->Controls->Add(this->btnModifie);
