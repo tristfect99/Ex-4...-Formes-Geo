@@ -15,5 +15,6 @@ class Carre:public Figure
 	virtual int getCote() const;
 	virtual float getPerimetre() const;
 	virtual bool selectionner(int, int);
+	string getType();
 };
 #endif

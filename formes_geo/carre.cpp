@@ -48,3 +48,8 @@ bool Carre::selectionner(int inX, int inY)
 	}
 	return estSelectionne;
 }
+
+string Carre::getType()
+{
+	return "Carre"
+}
