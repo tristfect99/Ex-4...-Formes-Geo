@@ -45,7 +45,7 @@ float FormeRectangle::calculerAire()
 	return (float)(largeur*hauteur);
 }
 
-float FormeRectangle::getPerimetre()
+float FormeRectangle::getPerimetre() const
 {
 	return (float)(largeur*2+hauteur*2);
 }
